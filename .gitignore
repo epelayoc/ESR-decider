@@ -1,0 +1,23 @@
+# Entornos virtuales y caché de Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+
+# Archivos de distribución y empaquetado
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Archivos temporales de datos y resultados (para no subir tus datos reales por error)
+*.xlsx
+*.csv
+*.json
+
+# Archivos del sistema y de IDEs
+.DS_Store
+.vscode/
+.idea/
