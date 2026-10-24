@@ -7,6 +7,8 @@ from transformers import AutoModel
 import time
 import json
 from tqdm.auto import tqdm
+import torch
+
 
 class SystemOneClient:
     """Cliente unificado para interactuar con modelos TYPESAFE y LIQUIDAI."""
@@ -30,9 +32,10 @@ class SystemOneClient:
             self.client = AutoModel.from_pretrained(
                 model_id,
                 trust_remote_code=True,
-                dtype="bfloat16",
+                torch_dtype=torch.float16,   
                 device_map="auto",
             )
+            
         else:
             raise ValueError( f"Modelo no válido '{model}'. Selecciona 'TYPESAFE' o 'LIQUID-AI'.")
 
