@@ -13,7 +13,7 @@ import torch
 class SystemOneClient:
     """Cliente unificado para interactuar con modelos TYPESAFE y LIQUIDAI."""
 
-    def __init__(self, model: str = "LIQUID-AI", model_id: str = "LiquidAI/d1-3B", api_key=None):
+    def __init__(self, model: str = "LIQUID-AI", model_id: str = "LiquidAI/d1-2B", api_key=None):
         """
         Inicializa el cliente según el modelo especificado.
 
