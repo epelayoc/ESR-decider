@@ -239,51 +239,51 @@ class SystemOneClient:
 
         return df_out
                           
-def process_excel(
-    self,
-    txt_column: str,
-    input_file: str,
-    num_rows: int = None,
-    output_file: str = "resultado_procesado.xlsx",
-    json_file: str = "datos.json",
-    base_path: str = ".",
-    index_cols: list = []
-):
-    """Lee un archivo Excel, procesa una columna especifica usando un cliente y guarda/devuelve el resultado."""
-
-    # 1. Resolver rutas de entrada y salida
-    input_path = input_file if os.path.isabs(input_file) else os.path.join(base_path, input_file)
-    json_path = json_file if os.path.isabs(json_file) else os.path.join(base_path, json_file)
+    def process_excel(
+        self,
+        txt_column: str,
+        input_file: str,
+        num_rows: int = None,
+        output_file: str = "resultado_procesado.xlsx",
+        json_file: str = "datos.json",
+        base_path: str = ".",
+        index_cols: list = []
+    ):
+        """Lee un archivo Excel, procesa una columna especifica usando un cliente y guarda/devuelve el resultado."""
     
-    # La salida siempre se guarda en el directorio actual o base_path especificado
-    output_filename = self.model_type + "_" + output_file if not os.path.isabs(output_file) else output_file
-    output_path = output_filename if os.path.isabs(output_filename) else os.path.join(base_path, output_filename)
-
-    # 2. Cargar el archivo Excel de entrada y el JSON
-    with open(json_path, "r", encoding="utf-8") as jsonfile:
-        questions = json.load(jsonfile)
-
-    df_in = pd.read_excel(input_path, nrows=num_rows if num_rows else None)
-
-    # 3. Recorrer las filas del DataFrame con barra de progreso
-    df_list = []
-    for index, r in tqdm(df_in.iterrows(), total=len(df_in), desc="Procesando comentarios"):
-        idx = {i: r[i] for i in index_cols}
-        idx['Block'] = txt_column
-        comment = r[txt_column]
+        # 1. Resolver rutas de entrada y salida
+        input_path = input_file if os.path.isabs(input_file) else os.path.join(base_path, input_file)
+        json_path = json_file if os.path.isabs(json_file) else os.path.join(base_path, json_file)
         
-        output = self.classify(
-            comment,
-            questions["q1"],
-            questions["q2"],
-            "topic_area",
-            eval_cond=["negativity", 1.5],
-            index=idx
-        )
-        df_list += output
-
-    # 4. Concatenar DataFrames
-    df_out = pd.DataFrame(df_list)
+        # La salida siempre se guarda en el directorio actual o base_path especificado
+        output_filename = self.model_type + "_" + output_file if not os.path.isabs(output_file) else output_file
+        output_path = output_filename if os.path.isabs(output_filename) else os.path.join(base_path, output_filename)
+    
+        # 2. Cargar el archivo Excel de entrada y el JSON
+        with open(json_path, "r", encoding="utf-8") as jsonfile:
+            questions = json.load(jsonfile)
+    
+        df_in = pd.read_excel(input_path, nrows=num_rows if num_rows else None)
+    
+        # 3. Recorrer las filas del DataFrame con barra de progreso
+        df_list = []
+        for index, r in tqdm(df_in.iterrows(), total=len(df_in), desc="Procesando comentarios"):
+            idx = {i: r[i] for i in index_cols}
+            idx['Block'] = txt_column
+            comment = r[txt_column]
+            
+            output = self.classify(
+                comment,
+                questions["q1"],
+                questions["q2"],
+                "topic_area",
+                eval_cond=["negativity", 1.5],
+                index=idx
+            )
+            df_list += output
+    
+        # 4. Concatenar DataFrames
+        df_out = pd.DataFrame(df_list)
 
     # 5. Guardar el DataFrame final
     df_out.to_excel(output_path, index=False)
