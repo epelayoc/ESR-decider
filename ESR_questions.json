@@ -160,5 +160,329 @@
                 }
             }
         }
+    },
+    "C_Impact": {
+        "q1": {
+            "topic_area": {
+                "type": "choice",
+                "instructions": "Which category corresponds to this assessment text?",
+                "criteria": {
+                    "pathways": "Credibility of pathways, logical causal chain, short-to-long term outcomes, logical steps to impact",
+                    "scale_significance": "Scale and significance of impacts, baseline quantification, target metrics, potential magnitude",
+                    "barriers": "External factors, market barriers, regulatory compliance, standardization, adoption risks",
+                    "dissemination": "Dissemination plan, scientific outputs, academic sharing, stakeholder channels, open dissemination",
+                    "exploitation": "Exploitation strategy, Key Exploitation Results (KERs), business models, uptake, commercialization",
+                    "communication": "Communication strategy, public outreach, media channels, non-expert audiences, awareness creation",
+                    "ip_management": "IPR strategy, IP protection, patenting, licensing, background/foreground IP, freedom to operate",
+                    "target_groups": "Target group identification, end-user mapping, market needs, stakeholder segmentation",
+                    "policy_alignment": "EU policy priorities, Green Deal, digital transition, socio-economic goals, broader strategic impact",
+                    "sustainability": "Post-project sustainability, long-term governance, financial continuity, scaling and replication"
+                }
+            },
+            "negativity": {
+                "type": "score",
+                "instructions": "Score the level of criticism or shortcomings expressed in the assessment text.",
+                "criteria": [
+                    "1: Fully positive or successfully addressed without caveats.",
+                    "2: Mostly positive, but briefly/lightly addressed or with minor shortcomings.",
+                    "3: Clear shortcoming or partially unaddressed criteria.",
+                    "4: Severe weakness or major flaw in the proposal."
+                ]
+            }
+        },
+        "q2": {
+            "pathways": {
+                "statement": {
+                    "type": "choice",
+                    "instructions": "Analyze the provided evaluation text and select the candidate statement semantically closest in meaning",
+                    "criteria": {
+                        "logical_chain": "Lacks a clear or credible causal pathway connecting project outputs to long-term impacts.",
+                        "credibility": "Proposed pathways to impact are unrealistic, overambitious, or insufficiently supported.",
+                        "timeframe": "Lacks realistic timeframes for when expected impacts will materialize post-project.",
+                        "attribution": "Fails to isolate the specific contribution or attribution of the project to broader impacts.",
+                        "assumptions": "Key underlying assumptions for reaching expected impacts are unstated or unjustified."
+                    }
+                }
+            },
+            "scale_significance": {
+                "statement": {
+                    "type": "choice",
+                    "instructions": "Analyze the provided evaluation text and select the candidate statement semantically closest in meaning",
+                    "criteria": {
+                        "quantification": "Fails to provide quantitative estimates or baseline metrics for scale and significance.",
+                        "overestimation": "Scale or significance of expected impacts is exaggerated or lacks credible justification.",
+                        "geographic_scope": "Impact is localized or limited in scope, lacking broader European or global significance.",
+                        "baseline_comparison": "Lacks comparison against baseline conditions to demonstrate the true magnitude of impact.",
+                        "substantiation": "Claims regarding economic, scientific, or societal impacts are generic and unsubstantiated."
+                    }
+                }
+            },
+            "barriers": {
+                "statement": {
+                    "type": "choice",
+                    "instructions": "Analyze the provided evaluation text and select the candidate statement semantically closest in meaning",
+                    "criteria": {
+                        "identification": "Fails to identify key regulatory, market, technical, or institutional barriers to impact.",
+                        "mitigation": "Lacks concrete measures or strategies to overcome identified framework barriers.",
+                        "standardisation": "Inadequate consideration of standardisation needs, regulatory compliance, or certification.",
+                        "market_adoption": "Ignores user resistance, market entry barriers, or adoption inertia.",
+                        "external_dependencies": "Underestimates reliance on external actors or policy changes to achieve impact."
+                    }
+                }
+            },
+            "dissemination": {
+                "statement": {
+                    "type": "choice",
+                    "instructions": "Analyze the provided evaluation text and select the candidate statement semantically closest in meaning",
+                    "criteria": {
+                        "strategy": "Dissemination plan is vague, conventional, or lacks specific targeted channels.",
+                        "audience_tailoring": "Dissemination activities are not tailored to specific scientific or industry target groups.",
+                        "timing": "Lacks a clear schedule or milestone-driven plan for dissemination actions.",
+                        "kpis": "Dissemination targets and KPIs are missing, qualitative, or unmeasurable.",
+                        "open_access_alignment": "Dissemination strategy fails to align with open access and open science goals."
+                    }
+                }
+            },
+            "exploitation": {
+                "statement": {
+                    "type": "choice",
+                    "instructions": "Analyze the provided evaluation text and select the candidate statement semantically closest in meaning",
+                    "criteria": {
+                        "kers_definition": "Key Exploitation Results (KERs) are poorly defined, vague, or missing.",
+                        "business_model": "Exploitation plan lacks concrete business models, pricing strategies, or routes to market.",
+                        "uptake_path": "Lacks clear pathways for commercial or non-commercial uptake by industrial/end-user partners.",
+                        "ownership": "Unclear ownership, distribution, or commercialization roles among consortium partners.",
+                        "market_readiness": "Fails to demonstrate how results will transition from project output to market/practical adoption."
+                    }
+                }
+            },
+            "communication": {
+                "statement": {
+                    "type": "choice",
+                    "instructions": "Analyze the provided evaluation text and select the candidate statement semantically closest in meaning",
+                    "criteria": {
+                        "public_reach": "Communication strategy fails to reach non-expert, general public, or policy audiences.",
+                        "channels": "Communication channels and tools are generic and lack operational detail.",
+                        "kpis": "Communication KPIs and reach metrics are vague or missing.",
+                        "branding": "Lacks a cohesive message, visual identity, or tailored framing for societal outreach.",
+                        "resources": "Resource allocation for communication activities is insufficient or poorly planned."
+                    }
+                }
+            },
+            "ip_management": {
+                "statement": {
+                    "type": "choice",
+                    "instructions": "Analyze the provided evaluation text and select the candidate statement semantically closest in meaning",
+                    "criteria": {
+                        "ipr_strategy": "Intellectual Property (IP) protection strategy is missing, weak, or ill-suited for KERs.",
+                        "freedom_to_operate": "Fails to address Freedom to Operate (FTO) or background IP restrictions.",
+                        "ownership_agreements": "Lacks clear agreements on foreground IP ownership, joint ownership, or licensing.",
+                        "exploitation_conflict": "Potential conflicts between open science dissemination and IP protection are unaddressed.",
+                        "patent_strategy": "Patenting or licensing plans lack concrete timelines, jurisdictions, or management mechanisms."
+                    }
+                }
+            },
+            "target_groups": {
+                "statement": {
+                    "type": "choice",
+                    "instructions": "Analyze the provided evaluation text and select the candidate statement semantically closest in meaning",
+                    "criteria": {
+                        "identification": "Key target groups, end-users, or customer segments are ill-defined or too broad.",
+                        "needs_analysis": "Fails to demonstrate a clear understanding of target groups' specific needs or pain points.",
+                        "engagement_depth": "Involvement of target stakeholders in the uptake process is passive or tokenistic.",
+                        "market_size": "Target market size, user demand, or willingness to adopt is insufficiently quantified.",
+                        "accessibility": "Lacks mechanisms to ensure accessibility or user feedback from target communities."
+                    }
+                }
+            },
+            "policy_alignment": {
+                "statement": {
+                    "type": "choice",
+                    "instructions": "Analyze the provided evaluation text and select the candidate statement semantically closest in meaning",
+                    "criteria": {
+                        "eu_policy": "Weak alignment with key EU policy priorities, Green Deal, or Digital Agenda goals.",
+                        "societal_impact": "Fails to clearly articulate broader societal, environmental, or health benefits.",
+                        "regulatory_support": "Does not demonstrate how outputs support regulatory frameworks or standard setting.",
+                        "sdg_contribution": "Claims regarding contribution to UN Sustainable Development Goals (SDGs) are unsubstantiated.",
+                        "strategic_autonomy": "Fails to address contribution to European technological sovereignty or industrial competitiveness."
+                    }
+                }
+            },
+            "sustainability": {
+                "statement": {
+                    "type": "choice",
+                    "instructions": "Analyze the provided evaluation text and select the candidate statement semantically closest in meaning",
+                    "criteria": {
+                        "post_project": "Lacks a long-term plan to sustain project results, platforms, or outputs after grant end.",
+                        "financial_viability": "Financial model for long-term operational continuity is missing or unrealistic.",
+                        "governance": "Lacks governance or management structure for post-project maintenance and community support.",
+                        "scalability": "Fails to demonstrate how the solution will scale or be replicated in other sectors/regions.",
+                        "funding_continuation": "Over-relies on future public grants without plans for self-sustaining revenue or private investment."
+                    }
+                }
+            }
+        }
+    },
+    "C_Implementation": {
+        "q1": {
+            "topic_area": {
+                "type": "choice",
+                "instructions": "Which category corresponds to this assessment text?",
+                "criteria": {
+                    "work_plan": "Work package structure, logical sequence, task breakdown, deliverables clarity, Gantt/PERT coherence",
+                    "resource_allocation": "Person-months allocation, budget justification, resource efficiency, cost-benefit balance",
+                    "risk_management": "Risk identification, mitigation strategies, contingency plans, technical/operational risk handling",
+                    "consortium_expertise": "Partner profiles, scientific/technical capacity, complementary skills, track record, operational capability",
+                    "consortium_composition": "Geographical balance, cross-sector representation, SME involvement, industrial/academic mix, partner roles",
+                    "governance_structure": "Decision-making mechanisms, management framework, conflict resolution, communication flow, project coordination",
+                    "milestones_deliverables": "Milestone feasibility, deliverable relevance, critical path, timing and schedule realistic planning",
+                    "infrastructure_resources": "Access to research infrastructure, equipment availability, subcontracting justification, third-party involvement",
+                    "quality_assurance": "Quality control procedures, internal review, progress monitoring, evaluation frameworks, advisory board",
+                    "effort_justification": "Work package effort distribution, task-level person-months, key personnel dedication, leadership allocation"
+                }
+            },
+            "negativity": {
+                "type": "score",
+                "instructions": "Score the level of criticism or shortcomings expressed in the assessment text.",
+                "criteria": [
+                    "1: Fully positive or successfully addressed without caveats.",
+                    "2: Mostly positive, but briefly/lightly addressed or with minor shortcomings.",
+                    "3: Clear shortcoming or partially unaddressed criteria.",
+                    "4: Severe weakness or major flaw in the proposal."
+                ]
+            }
+        },
+        "q2": {
+            "work_plan": {
+                "statement": {
+                    "type": "choice",
+                    "instructions": "Analyze the provided evaluation text and select the candidate statement semantically closest in meaning",
+                    "criteria": {
+                        "structure": "Work packages are poorly structured, overlapping, or lack logical sequence and operational coherence.",
+                        "task_breakdown": "Tasks lack sufficient detail, concrete methodologies, or operational clarity.",
+                        "deliverables_clarity": "Deliverables are poorly defined, vague, or lack clear quality/acceptance criteria.",
+                        "coherence": "Lack of alignment or integration between individual work packages and overall project goals.",
+                        "gantt_pert": "Timing, schedule, or task dependencies in Gantt/PERT charts are unrealistic or inconsistent."
+                    }
+                }
+            },
+            "resource_allocation": {
+                "statement": {
+                    "type": "choice",
+                    "instructions": "Analyze the provided evaluation text and select the candidate statement semantically closest in meaning",
+                    "criteria": {
+                        "person_months": "Total person-months allocation is unjustified, inflated, or insufficient for proposed tasks.",
+                        "budget_distribution": "Budget distribution across partners or work packages is unbalanced or inadequately justified.",
+                        "cost_efficiency": "Other direct costs (equipment, travel, consumables) lack clear breakdown or cost-efficiency justification.",
+                        "partner_budget": "Individual partner budget allocations do not match their assigned responsibilities or workload.",
+                        "value_for_money": "Fails to demonstrate overall value for money regarding the requested EU funding."
+                    }
+                }
+            },
+            "risk_management": {
+                "statement": {
+                    "type": "choice",
+                    "instructions": "Analyze the provided evaluation text and select the candidate statement semantically closest in meaning",
+                    "criteria": {
+                        "risk_identification": "Critical technical, operational, or commercial risks are omitted or understated.",
+                        "mitigation_measures": "Proposed risk mitigation strategies are vague, superficial, or lack actionable steps.",
+                        "contingency_planning": "Lacks clear contingency plans or alternative technical pathways if key milestones fail.",
+                        "probability_impact": "Fails to adequately assess the probability and severity impact of identified risks.",
+                        "monitoring": "Lacks an operational protocol for continuous risk monitoring throughout the project lifecycle."
+                    }
+                }
+            },
+            "consortium_expertise": {
+                "statement": {
+                    "type": "choice",
+                    "instructions": "Analyze the provided evaluation text and select the candidate statement semantically closest in meaning",
+                    "criteria": {
+                        "capacity_gaps": "Consortium lacks essential expertise or technical capabilities required to execute key tasks.",
+                        "track_record": "Key personnel or partner organizations lack a proven track record in the relevant domain.",
+                        "operational_capacity": "Unclear or insufficient operational capacity to carry out complex project activities.",
+                        "key_staff": "Role and dedication of key researchers/staff are insufficiently described or inadequate.",
+                        "complementarity": "Partners exhibit significant overlap in expertise without clear distinct roles or synergies."
+                    }
+                }
+            },
+            "consortium_composition": {
+                "statement": {
+                    "type": "choice",
+                    "instructions": "Analyze the provided evaluation text and select the candidate statement semantically closest in meaning",
+                    "criteria": {
+                        "balance": "Imbalance in consortium composition (e.g., weak SME, industrial, or academic representation).",
+                        "geographical_sectoral": "Poor geographical or cross-sectoral distribution relative to topic scope and expectations.",
+                        "partner_involvement": "Certain partners have minor, passive, or artificial roles without active contribution.",
+                        "stakeholder_coverage": "Key value chain actors or end-user organizations are missing from the consortium.",
+                        "cohesion": "Lacks evidence of genuine collaborative cohesion or synergy among international partners."
+                    }
+                }
+            },
+            "governance_structure": {
+                "statement": {
+                    "type": "choice",
+                    "instructions": "Analyze the provided evaluation text and select the candidate statement semantically closest in meaning",
+                    "criteria": {
+                        "decision_making": "Decision-making procedures, voting rules, and management structures are ill-defined.",
+                        "coordinator_capacity": "Coordinator's management experience or capacity to lead a complex multi-partner project is questionable.",
+                        "conflict_resolution": "Lacks clear procedures for conflict management, non-performance, or partner default.",
+                        "communication_channels": "Internal communication mechanisms, knowledge sharing, and coordination tools are vague.",
+                        "flexibility": "Management framework lacks flexibility to adapt to unexpected project modifications."
+                    }
+                }
+            },
+            "milestones_deliverables": {
+                "statement": {
+                    "type": "choice",
+                    "instructions": "Analyze the provided evaluation text and select the candidate statement semantically closest in meaning",
+                    "criteria": {
+                        "milestone_relevance": "Milestones are defined as routine tasks rather than critical, verifiable progress checkpoints.",
+                        "timing_feasibility": "Deliverable and milestone timelines are unrealistically concentrated or poorly phased.",
+                        "verification": "Lacks clear quantitative or qualitative verification metrics to assess milestone achievement.",
+                        "critical_path": "Fails to identify the project critical path or dependencies between major deliverables.",
+                        "deliverable_frequency": "Deliverable schedule is poorly balanced, presenting excessive fragmentation or inadequate monitoring."
+                    }
+                }
+            },
+            "infrastructure_resources": {
+                "statement": {
+                    "type": "choice",
+                    "instructions": "Analyze the provided evaluation text and select the candidate statement semantically closest in meaning",
+                    "criteria": {
+                        "facility_access": "Access to key research infrastructure, equipment, or datasets is unconfirmed or questionable.",
+                        "subcontracting": "Subcontracting is extensive, unjustified, or covers core project tasks.",
+                        "third_parties": "Involvement of third parties or linked entities lacks clear justification or operational clarity.",
+                        "resource_availability": "Doubtful availability of specialized software, testing facilities, or operational sites.",
+                        "ip_equipment_use": "Unclear arrangements for accessing or utilizing proprietary external assets and tools."
+                    }
+                }
+            },
+            "quality_assurance": {
+                "statement": {
+                    "type": "choice",
+                    "instructions": "Analyze the provided evaluation text and select the candidate statement semantically closest in meaning",
+                    "criteria": {
+                        "monitoring_framework": "Lacks a structured internal quality monitoring framework or performance tracking metrics.",
+                        "advisory_board": "Role, composition, or operational contribution of the External Advisory Board is unclear.",
+                        "review_process": "Internal deliverable review procedures and quality control mechanisms are weak or missing.",
+                        "data_management_link": "Poor integration of data management quality control with operational project execution.",
+                        "corrective_actions": "Lacks protocols for early detection of deviations and implementation of corrective actions."
+                    }
+                }
+            },
+            "effort_justification": {
+                "statement": {
+                    "type": "choice",
+                    "instructions": "Analyze the provided evaluation text and select the candidate statement semantically closest in meaning",
+                    "criteria": {
+                        "wp_effort": "Person-months allocated to specific work packages are disproportionate to the workload.",
+                        "task_effort": "Inappropriate distribution of effort across individual tasks within work packages.",
+                        "leadership_effort": "Effort assigned to Work Package leaders or Coordinator is insufficient or excessive.",
+                        "junior_senior_balance": "Unclear or unbalanced ratio between senior researchers and junior staff effort.",
+                        "operational_commitment": "Key partner organizations allocate insufficient effort to guarantee task completion."
+                    }
+                }
+            }
+        }
     }
 }
