@@ -276,8 +276,8 @@ class SystemOneClient:
             
             output = self.classify(
                 comment,
-                questions['C_excellence']["q1"],
-                questions['C_excellence']["q2"],
+                questions[txt_column]["q1"],
+                questions[txt_column]["q2"],
                 "topic_area",
                 eval_cond=["negativity", 1.5],
                 index=idx
