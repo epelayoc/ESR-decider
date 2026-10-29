@@ -1,0 +1,165 @@
+{
+    "C_excellence":{
+        "q1": {
+            "topic_area": {
+                "type": "choice",
+                "instructions": "Which category corresponds to this assessment text?",
+                "criteria": {
+                    "objectives": "Call alignment, goal clarity, topic relevance, outcome connection, specific objectives",
+                    "ambition": "Ambition level, target feasibility, realistic scope, risk management",
+                    "SoA": "Baseline knowledge, research gaps, advances beyond SoA, scientific originality",
+                    "methodology": "Conceptual framework, underlying models, structural coherence, literature grounding.",
+                    "measurability": "KPIs, quantifiable baselines, success metrics, progress tracking",
+                    "demonstration": "Use cases, validation, demonstrators, experimental design, testing scenarios",
+                    "interdisciplinarity": "interdisciplinarity, Cross-sector logic, SSH integration, human oversight, regulatory compliance",
+                    "gender": "Gender dimension, inclusivity, bias mitigation, societal implications",
+                    "open_science": "FAIR data, open access, open code, modular API, IP management, patent strategy, licensing",
+                    "engagement": "stakeholder engagement."
+                }
+            },
+            "negativity": {
+                "type": "score",
+                "instructions": "Score the level of criticism or shortcomings expressed in the assessment text.",
+                "criteria": [
+                    "1: Fully positive or successfully addressed without caveats.",
+                    "2: Mostly positive, but briefly/lightly addressed or with minor shortcomings.",
+                    "3: Clear shortcoming or partially unaddressed criteria.",
+                    "4: Severe weakness or major flaw in the proposal."
+                ]
+            },
+            
+        },
+        "q2": {
+            "objectives": {
+                "statement": {
+                    "type": "choice",
+                    "instructions": "Analyze the provided evaluation text and select the candidate statement semantically closest in meaning",
+                    "criteria": {
+                        "alignment": "Objectives lack alignment with the specific scope and expected outcomes of the call topic.",
+                        "clarity": "Proposed objectives are vague, overly broad, or poorly defined.",
+                        "coherence": "Disconnect between the overarching project goal and the specific operational sub-objectives.",
+                        "measurability": "Objectives are formulated as activities rather than measurable, concrete outcomes.",
+                        "realism": "Objectives are overly optimistic and unachievable within the project framework."
+                    }
+                }
+            },
+            "ambition": {
+                "statement": {
+                    "type": "choice",
+                    "instructions": "Analyze the provided evaluation text and select the candidate statement semantically closest in meaning",
+                    "criteria": {
+                        "scope": "Project scope lacks ambition, proposing incremental improvements rather than a breakthrough.",
+                        "feasibility": "Proposed ambitious targets are unrealistic given the proposed timeline, resources, or technical constraints.",
+                        "trl_progress": "Unrealistic or poorly justified progression along Technology Readiness Levels (TRL).",
+                        "tradeoff": "Inadequate justification of the balance between high-risk scientific ambition and technical feasibility.",
+                        "disruptive_potential": "Fails to demonstrate potential for transformative or disruptive scientific/technological impact."
+                    }
+                }
+            },
+            "SoA": {
+                "statement": {
+                    "type": "choice",
+                    "instructions": "Analyze the provided evaluation text and select the candidate statement semantically closest in meaning",
+                    "criteria": {
+                        "advancement": "Fails to demonstrate clear scientific or technological advancement beyond the current state of the art.",
+                        "gaps": "State-of-the-art review is weak, failing to identify key scientific gaps or existing benchmark solutions.",
+                        "novelty": "Proposed solution relies on standard, mature methods without introducing genuine scientific novelty.",
+                        "commercial_overlap": "Fails to prove distinct advancement or competitive edge over existing commercial solutions.",
+                        "benchmarking": "Lacks quantitative comparison or rigorous benchmarking against current state-of-the-art baselines."
+                    }
+                }
+            },
+            "methodology": {
+                "statement": {
+                    "type": "choice",
+                    "instructions": "Analyze the provided evaluation text and select the candidate statement semantically closest in meaning",
+                    "criteria": {
+                        "framework": "Conceptual framework lacks structural coherence, logical flow, or theoretical grounding.",
+                        "technical_depth": "Methodology lacks crucial technical details on how key research challenges will be solved.",
+                        "literature_support": "Proposed technical models and scientific choices lack grounding in literature or preliminary data.",
+                        "integration": "Poor integration between different multidisciplinary research tracks or work streams.",
+                        "robustness": "Methodological approach lacks robustness, failing to address potential scientific pitfalls or edge cases."
+                    }
+                }
+            },
+            "measurability": {
+                "statement": {
+                    "type": "choice",
+                    "instructions": "Analyze the provided evaluation text and select the candidate statement semantically closest in meaning",
+                    "criteria": {
+                        "baselines": "Fails to establish concrete, quantified baseline values to measure future progress against.",
+                        "kpi_definition": "KPIs are vague, qualitative, or lack clear quantitative target values.",
+                        "kpi_alignment": "Defined KPIs do not align directly with the project outcomes or scientific objectives.",
+                        "interim_targets": "Lacks realistic interim milestones or progress tracking checkpoints.",
+                        "verifiability": "Proposed success metrics cannot be independently verified or measured."
+                    }
+                }
+            },
+            "demonstration": {
+                "statement": {
+                    "type": "choice",
+                    "instructions": "Analyze the provided evaluation text and select the candidate statement semantically closest in meaning",
+                    "criteria": {
+                        "design": "Experimental or testing design lacks rigor, clear protocols, or statistically sound validation plans.",
+                        "use_cases": "Selected use cases or test scenarios fail to represent realistic operational conditions.",
+                        "environment": "Validation is restricted to lab scale without testing in relevant or real-world environments.",
+                        "protocols": "Demonstration plans lack explicit procedures, evaluation criteria, or performance thresholds.",
+                        "integration": "Weak link between technological developments and their practical validation scenarios."
+                    }
+                }
+            },
+            "interdisciplinarity": {
+                "statement": {
+                    "type": "choice",
+                    "instructions": "Analyze the provided evaluation text and select the candidate statement semantically closest in meaning",
+                    "criteria": {
+                        "cross_sector": "Lacks genuine interdisciplinary integration, treating secondary disciplines as isolated additions.",
+                        "ssh": "Social Sciences and Humanities (SSH) integration is superficial, tokenistic, or completely missing.",
+                        "oversight": "Human-in-the-loop oversight, ethical implications, or regulatory compliance are insufficiently addressed.",
+                        "methodology_link": "Fails to show how interdisciplinary expertise will practically inform the research methodology.",
+                        "governance": "Lacks structural mechanisms for effective cross-disciplinary collaboration and knowledge exchange."
+                    }
+                }
+            },
+            "gender": {
+                "statement": {
+                    "type": "choice",
+                    "instructions": "Analyze the provided evaluation text and select the candidate statement semantically closest in meaning",
+                    "criteria": {
+                        "dimension": "Gender dimension in research content is ignored without adequate justification.",
+                        "bias": "Lacks actionable strategies to mitigate gender bias in datasets, algorithms, or experimental design.",
+                        "societal": "Fails to address gender-specific societal impacts or inclusive design principles.",
+                        "analysis": "Does not analyze how biological sex or social gender variables affect scientific findings.",
+                        "inclusivity": "Inclusivity measures fail to address diversity and bias prevention in target user groups."
+                    }
+                }
+            },
+            "open_science": {
+                "statement": {
+                    "type": "choice",
+                    "instructions": "Analyze the provided evaluation text and select the candidate statement semantically closest in meaning",
+                    "criteria": {
+                        "fair_data": "Fails to commit to concrete FAIR (Findable, Accessible, Interoperable, Reusable) data management practices.",
+                        "open_access": "Lacks a clear commitment to open access publishing for scientific outputs and peer-reviewed papers.",
+                        "code_sharing": "No plans or commitment to provide open-source code, scripts, or modular software APIs.",
+                        "methodology_integration": "Open science practices are treated as a compliance checklist rather than integrated into research methodology.",
+                        "reusability": "Does not address long-term preservation, metadata curation, or reusability of research datasets."
+                    }
+                }
+            },
+            "engagement": {
+                "statement": {
+                    "type": "choice",
+                    "instructions": "Analyze the provided evaluation text and select the candidate statement semantically closest in meaning",
+                    "criteria": {
+                        "co_creation": "Stakeholders and end-users are not involved in the co-design or co-creation of the research methodology.",
+                        "audiences": "Key target stakeholder groups, end-users, or affected communities are vaguely defined.",
+                        "feedback_loops": "Engagement activities are passive (e.g., surveys) without active, continuous feedback loops.",
+                        "validation_role": "End-user involvement in validation scenarios is superficial or deferred to the end of the project.",
+                        "operational_plan": "Lacks an operational framework for continuous interaction with relevant multi-actor ecosystems."
+                    }
+                }
+            }
+        }
+    }
+}
