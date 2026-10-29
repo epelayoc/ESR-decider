@@ -323,7 +323,7 @@
             }
         }
     },
-    "C_Implement": {
+    "C_Implement": { 
         "q1": {
             "topic_area": {
                 "type": "choice",
