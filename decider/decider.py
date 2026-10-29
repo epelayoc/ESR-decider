@@ -286,8 +286,8 @@ class SystemOneClient:
         # 4. Concatenar DataFrames
         df_out = pd.DataFrame(df_list)
 
-    # 5. Guardar el DataFrame final
-    df_out.to_excel(output_path, index=False)
-    print(f"Archivo guardado con exito en: {output_path}")
-
-    return df_out
+        # 5. Guardar el DataFrame final
+        df_out.to_excel(output_path, index=False)
+        print(f"Archivo guardado con exito en: {output_path}")
+    
+        return df_out
