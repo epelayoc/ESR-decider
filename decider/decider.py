@@ -23,13 +23,14 @@ class SystemOneClient:
         """
         self.model_type = model.upper()
         self.api_key = api_key
-
+        self.model_id = model_id
         if self.model_type == "TYPESAFE":
             if self.api_key:
                 os.environ["TYPESAFE_API_KEY"] = self.api_key
             self.client = TypeSafeClient()
 
         elif self.model_type == "LIQUID-AI":
+            
             transformers.logging.set_verbosity_error()
             self.client = AutoModel.from_pretrained(
                 model_id,
