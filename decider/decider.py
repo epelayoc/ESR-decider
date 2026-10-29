@@ -36,7 +36,8 @@ class SystemOneClient:
                 model_id,
                 trust_remote_code=True,
                 torch_dtype=torch.float16,   
-                device_map="auto",
+                device_map={"": 1},  # Forces all layers onto GPU 1
+                #device_map="auto",
             )
             
         else:
