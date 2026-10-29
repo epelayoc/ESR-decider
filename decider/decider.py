@@ -29,6 +29,7 @@ class SystemOneClient:
             self.client = TypeSafeClient()
 
         elif self.model_type == "LIQUID-AI":
+            transformers.logging.set_verbosity_error()
             self.client = AutoModel.from_pretrained(
                 model_id,
                 trust_remote_code=True,
