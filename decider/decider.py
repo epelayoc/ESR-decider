@@ -73,6 +73,10 @@ class SystemOneClient:
             a = answers[k]  # answer
             type = a['type']  # type
             d[k] = a[type]  # answer_value
+            if type == 'score':
+                probs = list(value.get('probabilities', {}).values())
+                d[key] = sum(i * p for i, p in enumerate(probs))
+            resultados[key] = sum(i * p for i, p in enumerate(probs))
             if type in ['choice', 'score']:  # Add labels confidences & probs
 
                 if prob_list:
