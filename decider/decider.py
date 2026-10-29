@@ -4,6 +4,7 @@ import pandas as pd
 from pprint import pprint
 from typesafe_sdk import TypeSafeClient
 from transformers import AutoModel
+import transformers
 import time
 import json
 from tqdm.auto import tqdm
