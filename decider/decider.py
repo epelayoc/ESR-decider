@@ -195,56 +195,6 @@ class SystemOneClient:
             d["time"] = time.perf_counter() - start_time
             rows.append(d)
         return rows
-
-    def process_excel1( self, txt_column: str, input_file: str, num_rows: int = None,
-                      output_file: str = "resultado_procesado.xlsx", json_file="datos.json", base_path: str = ".",index_cols=[] ):
-
-        """Lee un archivo Excel desde Google Colab, procesa una columna específica
-        usando un cliente y guarda/devuelve el resultado.
-        """
-
-        # 1. Rutas directas a la carpeta por defecto de Google Colab (/content/)
-        #base_path = "/content/"
-        #input_path = os.path.join(base_path, input_file)
-        #output_path = os.path.join(base_path, self.model_type+"_"+output_file)
-
-        input_path = (
-                os.path.join(base_path, input_file)
-                if not os.path.isabs(input_file)
-                else input_file
-            )
-        
-        output_path = (
-            os.path.join(base_path, self.model_type + "_" + output_file)
-            if not os.path.isabs(output_file)
-            else output_file
-        )
-
-        # 2. Cargar el archivo Excel de entrada y el JSON
-        with open(json_file, "r", encoding="utf-8") as jsonfile:
-            questions = json.load(jsonfile)
-        df_in = pd.read_excel(input_path, nrows=num_rows if num_rows else None)
-
-        # 3. Recorrer las filas del DataFrame con barra de progreso
-        df_list = []
-        for index, r in tqdm( df_in.iterrows(), total=len(df_in), desc="Procesando comentarios" ):
-            idx = {}
-            for i in index_cols:
-                idx[i] = r[i]
-            idx['Block'] = txt_column
-            comment = r[txt_column]
-            output = self.classify( comment, questions["q1"], questions["q2"], "topic_area",
-                                        eval_cond=["negativity", 1.5],index=idx, )
-            df_list += output
-
-        # 4. Concatenar todos los DataFrames de la lista en uno solo
-        df_out = pd.DataFrame(df_list)
-
-        # 5. Guardar el DataFrame final en un archivo Excel en Google Colab
-        df_out.to_excel(output_path, index=False)
-        print(f"Archivo guardado con éxito en: {output_path}")
-
-        return df_out
                           
     def process_excel(
         self,
@@ -274,7 +224,7 @@ class SystemOneClient:
     
         # 3. Recorrer las filas del DataFrame con barra de progreso
         df_list = []
-        for index, r in tqdm(df_in.iterrows(), total=len(df_in), desc="Procesando comentarios"):
+        for index, r in tqdm(df_in.iterrows(), total=len(df_in), desc="Processing comments: "+txt_column):
             idx = {i: r[i] for i in index_cols}
             idx['Block'] = txt_column
             comment = r[txt_column]
