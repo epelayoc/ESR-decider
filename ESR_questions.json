@@ -19,12 +19,12 @@
             },
             "negativity": {
                 "type": "score",
-                "instructions": "Score the level of criticism or shortcomings expressed in the assessment text.",
+                "instructions": "Score the level of criticism or negativity expressed in the assessment text.",
                 "criteria": [
-                    "1: Fully positive or successfully addressed without caveats.",
-                    "2: Mostly positive, but briefly/lightly addressed or with minor shortcomings.",
-                    "3: Clear shortcoming or partially unaddressed criteria.",
-                    "4: Severe weakness or major flaw in the proposal."
+                    "Fully positive or successfully addressed without caveats.",
+                    "Mostly positive, but briefly/lightly addressed or with minor shortcomings.",
+                    "Clear shortcoming or partially unaddressed criteria.",
+                    "Included weakness or major flaw."
                 ]
             }
         },
