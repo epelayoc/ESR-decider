@@ -23,14 +23,14 @@ class SystemOneClient:
         """
         self.model_type = model.upper()
         self.api_key = api_key
-        self.model_id = model_id
         if self.model_type == "TYPESAFE":
             if self.api_key:
                 os.environ["TYPESAFE_API_KEY"] = self.api_key
             self.client = TypeSafeClient()
+            self.model_id = 'API'
 
         elif self.model_type == "LIQUID-AI":
-            
+            self.model_id = model_id
             transformers.logging.set_verbosity_error()
             self.client = AutoModel.from_pretrained(
                 model_id,
@@ -43,6 +43,9 @@ class SystemOneClient:
         else:
             raise ValueError( f"Modelo no válido '{model}'. Selecciona 'TYPESAFE' o 'LIQUID-AI'.")
 
+    def __str__(self):
+        return f"SystemOneClient(model='{self.model_type}', model_id='{self.model_id}')"
+        
     def _round_nested(self, val, decimals=3):
         if isinstance(val, dict):
             return {k: self._round_nested(v, decimals) for k, v in val.items()}
