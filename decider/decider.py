@@ -7,7 +7,8 @@ from transformers import AutoModel
 import transformers
 import time
 import json
-from tqdm.auto import tqdm
+#from tqdm.auto import tqdm
+from tqdm import tqdm
 import torch
 
 
@@ -227,20 +228,26 @@ class SystemOneClient:
     
         # 3. Recorrer las filas del DataFrame con barra de progreso
         df_list = []
-        for index, r in tqdm(df_in.iterrows(), total=len(df_in), desc="Processing comments: "+txt_column):
-            idx = {i: r[i] for i in index_cols}
-            idx['Block'] = txt_column
+        #for index, r in tqdm(df_in.iterrows(), total=len(df_in), desc="Processing comments: "+txt_column):
+        for index, r in tqdm( df_in.iterrows(), total=len(df_in), desc="Processing comments: " + txt_column,
+                             mininterval=120.0,  # Imprime en el log. Intervalo en segundos
+                             leave=True         # Deja la línea final registrada cuando termine
+                            ):
             comment = r[txt_column]
-            
-            output = self.classify(
-                comment,
-                questions[txt_column]["q1"],
-                questions[txt_column]["q2"],
-                "topic_area",
-                eval_cond=["negativity", 1.5],
-                index=idx
-            )
-            df_list += output
+            if isinstance(comment, str):
+                idx = {i: r[i] for i in index_cols}
+                idx['Block'] = txt_column
+                comment = r[txt_column]
+                
+                output = self.classify(
+                    comment,
+                    questions[txt_column]["q1"],
+                    questions[txt_column]["q2"],
+                    "topic_area",
+                    eval_cond=["negativity", 1.5],
+                    index=idx
+                )
+                df_list += output
     
         # 4. Concatenar DataFrames
         df_out = pd.DataFrame(df_list)
