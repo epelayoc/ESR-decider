@@ -7,6 +7,7 @@ from transformers import AutoModel
 import transformers
 import time
 import json
+import sys
 #from tqdm.auto import tqdm
 from tqdm import tqdm
 import torch
@@ -229,10 +230,15 @@ class SystemOneClient:
         # 3. Recorrer las filas del DataFrame con barra de progreso
         df_list = []
         #for index, r in tqdm(df_in.iterrows(), total=len(df_in), desc="Processing comments: "+txt_column):
-        for index, r in tqdm( df_in.iterrows(), total=len(df_in), desc="Processing comments: " + txt_column,
-                             mininterval=120.0,  # Imprime en el log. Intervalo en segundos
-                             leave=True         # Deja la línea final registrada cuando termine
-                            ):
+        #for index, r in tqdm( df_in.iterrows(), total=len(df_in), desc="Processing comments: " + txt_column, mininterval=120.0, leave=True ):
+        formato_log = "{desc}{percentage:3.0f}% - {n_fmt}/{total_fmt} [{elapsed}<{remaining}, {rate_fmt}]"
+
+        for index, r in tqdm(df_in.iterrows(), total=len(df_in), desc="Processing " + txt_column,
+                            mininterval=120.0,       # Print each 120 seconds
+                            file=sys.stdout,         
+                            bar_format=formato_log,   # Text only
+                            leave=True
+                        ):
             comment = r[txt_column]
             if isinstance(comment, str):
                 idx = {i: r[i] for i in index_cols}
